@@ -10,6 +10,7 @@ namespace TrainingAPPs
     {
         static void Main(string[] args)
         {
+            Console.WriteLine(32);
         }
     }
 }
