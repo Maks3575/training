@@ -10,16 +10,25 @@ namespace TrainingAPPs.Graph
     {
         List<Vertex> VertexList;
         List<Edge> EdgeList;
+        public Graph()
+        {
+            Init();
+        }
 
+        void Init()
+        {
+            VertexList = new List<Vertex>();
+            EdgeList = new List<Edge>();
+        }
         public void FillFromAdjacencyMatrix(int[,] matrix)
         {
             int countVertex = matrix.GetLength(0);
-            VertexList = Enumerable.Range(0, countVertex - 1).Select(i => new Vertex() { id = i }).ToList();
+            VertexList = Enumerable.Range(0, countVertex).Select(i => new Vertex() { id = i }).ToList();
             for (int i = 0; i < countVertex; i++)
             {
                 for (int j = 0; j < countVertex; j++)
                 {
-                    if (j == 1)
+                    if (matrix[i,j] == 1)
                     {
                         var edge = new Edge { Vertex1 = VertexList[i], Vertex2 = VertexList[j] };
                         EdgeList.Add(edge);

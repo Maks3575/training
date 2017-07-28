@@ -11,7 +11,14 @@ namespace TrainingAPPs
         static void Main(string[] args)
         {
             //SummBetweenZeros();
-            IndexForMinAndMax();
+            //IndexForMinAndMax();
+                var graph = new Graph.Graph();
+                int[,] inputMatrix = new int[3, 3] {
+                    {0, 0, 1 },
+                    {1, 0, 0 },
+                    {1, 1, 1 }};
+                graph.FillFromAdjacencyMatrix(inputMatrix);
+                int[,] outputMatrix = graph.CreateAdjacencyMatrix();
         }
         public static void IndexForMinAndMax()
         {

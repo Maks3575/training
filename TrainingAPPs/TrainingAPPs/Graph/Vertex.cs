@@ -10,7 +10,7 @@ namespace TrainingAPPs.Graph
     {
         public int id { get; set; }
 
-        public List<Edge> InputEdges { get; set; }
-        public List<Edge> OutputEdges { get; set; }
+        public List<Edge> InputEdges { get; set; } = new List<Edge>();
+        public List<Edge> OutputEdges { get; set; } = new List<Edge>();
     }
 }
